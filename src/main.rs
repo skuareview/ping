@@ -1,9 +1,15 @@
 use checkssl::CheckSSL;
 use reqwest;
+use std::env;
 use std::time::Instant;
 
 #[tokio::main]
 async fn main() {
+    /*
+     * Fetch urls to analyse
+     */
+    let api_url = env::var("API_URL").expect("No url for the api was provided");
+
     /*
      * HTTP
      */
